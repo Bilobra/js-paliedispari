@@ -27,6 +27,18 @@ if (parola === parolaInversa) {
     console.log('la parola non è palindroma')
 }
 
+
+// let frase = prompt('inserisci una frase');
+// console.log(frase);
+
+// function invertiFrase(str) {
+//     const frasereverse = str.split('').reverse().join('')
+//     return frasereverse
+// }
+
+// const fraseCompleta = invertiFrase(frase)
+// console.log(fraseCompleta)
+
 // ---------------------------
 
 // PARI & DISPARI
