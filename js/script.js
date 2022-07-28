@@ -58,11 +58,16 @@ const risultato = isEven(numeroSum);
 // condizione di vincita
 if (scelta === 'pari' && risultato === true) {
     console.log('ha vinto il giocatore');
+    alert('HAI VINTO!!');
 } else if (scelta === 'dispari' && risultato === false) {
     console.log('ha vinto il giocatore');
+    alert('HAI VINTO!!');
+
 }
 else {
     console.log('ha vinto il computer');
+    alert('HAI PERSO!!');
+
 }
 
 // FUNZIONI --->
