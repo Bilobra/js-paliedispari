@@ -36,40 +36,6 @@ if (parola === parolaInversa) {
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
-const scelta = prompt('scegli pari o dispari');
-console.log(scelta);
-const numeroScelto = parseInt(prompt('scegli un numero da 1 a 5'));
-console.log('hai scelto il numero: ' + numeroScelto);
-const numeroPc = getRandomIntBetween(1, 5);
-console.log('numero pc : ' + numeroPc)
-// PRIMA SCRIVO LA FUNZIONE poi la salvo in una const : 
-
-// somma del numero generato e del numero scelto
-
-const numeroSum = (numeroScelto + numeroPc);
-console.log('somma dei numeri : ' + numeroSum);
-
-
-// DETERMINARE CHI HA VINTO
-// salvo il dato del pari o dispari
-const risultato = isEven(numeroSum);
-// console.log('risultato : ' + risultato);
-
-// condizione di vincita
-if (scelta === 'pari' && risultato === true) {
-    console.log('ha vinto il giocatore');
-    alert('HAI VINTO!!');
-} else if (scelta === 'dispari' && risultato === false) {
-    console.log('ha vinto il giocatore');
-    alert('HAI VINTO!!');
-
-}
-else {
-    console.log('ha vinto il computer');
-    alert('HAI PERSO!!');
-
-}
-
 // FUNZIONI --->
 
 // GENERARE NUMERO RANDOM DA 1 A 5 
@@ -91,3 +57,42 @@ function isEven(num) {
 
     }
 }
+
+
+
+const scelta = prompt('scegli pari o dispari');
+console.log(scelta);
+
+const numeroScelto = parseInt(prompt('scegli un numero da 1 a 5'));
+console.log('hai scelto il numero: ' + numeroScelto);
+
+const numeroPc = getRandomIntBetween(1, 5);
+console.log('numero pc : ' + numeroPc);
+
+
+// somma del numero generato e del numero scelto
+
+const numeroSum = (numeroScelto + numeroPc);
+console.log('somma dei numeri : ' + numeroSum);
+
+
+// DETERMINARE CHI HA VINTO
+// salvo il dato del pari o dispari della funzione
+const risultato = isEven(numeroSum);
+// console.log('risultato : ' + risultato);
+
+// condizione di vincita
+if (scelta === 'pari' && risultato === true) {
+    console.log('ha vinto il giocatore');
+    alert('HAI VINTO!!');
+} else if (scelta === 'dispari' && risultato === false) {
+    console.log('ha vinto il giocatore');
+    alert('HAI VINTO!!');
+
+}
+else {
+    console.log('ha vinto il computer');
+    alert('HAI PERSO!!');
+
+}
+
