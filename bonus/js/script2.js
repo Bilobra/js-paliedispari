@@ -64,52 +64,56 @@ const scelta = prompt('scegli pari o dispari');
 
 // VERIFICARE DI AVER INSERITO PARI O DISPARI 
 
-if ( scelta != 'pari' || scelta != 'dispari'){
+if (scelta != 'pari' && scelta != 'dispari') {
     alert('non hai inserito correttamente la parola, ritenta!')
+    console.log(scelta);
+} else {
+
+    const numeroScelto = parseInt(prompt('scegli un numero da 1 a 5'));
+
+    // VERIFICARE CHE NUMERO SCELTO SIANO NUMERI E >1 - <5 
+
+    if (numeroScelto < 1 || numeroScelto > 5 || isNaN(numeroScelto)) {
+        alert('numero non valido, ritenta!')
+        console.log('hai scelto il numero: ' + numeroScelto);
+    } else {
+        const numeroPc = getRandomIntBetween(1, 5);
+        console.log('numero pc : ' + numeroPc);
+
+
+        // VERIFICARE CHE SCELTA SIA PARI O DISPARI
+
+
+        // somma del numero generato e del numero scelto
+
+        const numeroSum = (numeroScelto + numeroPc);
+        console.log('somma dei numeri : ' + numeroSum);
+
+
+        // DETERMINARE CHI HA VINTO
+        // salvo il dato del pari o dispari della funzione
+        const risultato = isEven(numeroSum);
+        // console.log('risultato : ' + risultato);
+
+        // condizione di vincita
+        if (scelta === 'pari' && risultato === true) {
+            console.log('ha vinto il giocatore');
+            alert('HAI VINTO!!');
+        } else if (scelta === 'dispari' && risultato === false) {
+            console.log('ha vinto il giocatore');
+            alert('HAI VINTO!!');
+
+        }
+        else {
+            console.log('ha vinto il computer');
+            alert('HAI PERSO!!');
+
+        }
+    }
+
 }
-console.log(scelta);
-
-const numeroScelto = parseInt(prompt('scegli un numero da 1 a 5'));
-
-// VERIFICARE CHE NUMERO SCELTO SIANO NUMERI E >1 - <5 
-
-if ( numeroScelto < 1 || numeroScelto > 5 || isNaN(numeroScelto)){
-    alert('numero non valido, ritenta!')
-}
 
 
-console.log('hai scelto il numero: ' + numeroScelto);
-
-const numeroPc = getRandomIntBetween(1, 5);
-console.log('numero pc : ' + numeroPc);
 
 
-// VERIFICARE CHE SCELTA SIA PARI O DISPARI
-
-
-// somma del numero generato e del numero scelto
-
-const numeroSum = (numeroScelto + numeroPc);
-console.log('somma dei numeri : ' + numeroSum);
-
-
-// DETERMINARE CHI HA VINTO
-// salvo il dato del pari o dispari della funzione
-const risultato = isEven(numeroSum);
-// console.log('risultato : ' + risultato);
-
-// condizione di vincita
-if (scelta === 'pari' && risultato === true) {
-    console.log('ha vinto il giocatore');
-    alert('HAI VINTO!!');
-} else if (scelta === 'dispari' && risultato === false) {
-    console.log('ha vinto il giocatore');
-    alert('HAI VINTO!!');
-
-}
-else {
-    console.log('ha vinto il computer');
-    alert('HAI PERSO!!');
-
-}
 
