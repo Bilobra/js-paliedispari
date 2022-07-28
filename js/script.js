@@ -56,9 +56,12 @@ const risultato = isEven(numeroSum);
 // console.log('risultato : ' + risultato);
 
 // condizione di vincita
-if (scelta === risultato) {
+if (scelta === 'pari' && risultato === true) {
     console.log('ha vinto il giocatore');
-} else {
+} else if (scelta === 'dispari' && risultato === false) {
+    console.log('ha vinto il giocatore');
+}
+else {
     console.log('ha vinto il computer');
 }
 
@@ -68,7 +71,7 @@ if (scelta === risultato) {
 function getRandomIntBetween(min, max) {
 
     const n = Math.floor(Math.random() * (max - min + 1)) + min;
-    
+
     return n;
 }
 
