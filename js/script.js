@@ -39,22 +39,47 @@ if (parola === parolaInversa) {
 const scelta = prompt('scegli pari o dispari');
 console.log(scelta);
 const numeroScelto = parseInt(prompt('scegli un numero da 1 a 5'));
-console.log(numeroScelto);
-
+console.log('hai scelto il numero: ' + numeroScelto);
+const numeroPc = getRandomIntBetween(1, 5);
+console.log('numero pc : ' + numeroPc)
 // PRIMA SCRIVO LA FUNZIONE poi la salvo in una const : 
+
 // somma del numero generato e del numero scelto
 
-const numeroSum = (numeroScelto + getRandomIntBetween(1, 5));
-console.log(numeroSum);
+const numeroSum = (numeroScelto + numeroPc);
+console.log('somma dei numeri : ' + numeroSum);
 
 
+// DETERMINARE CHI HA VINTO
+// salvo il dato del pari o dispari
+const risultato = isEven(numeroSum);
+// console.log('risultato : ' + risultato);
+
+// condizione di vincita
+if (scelta === risultato) {
+    console.log('ha vinto il giocatore');
+} else {
+    console.log('ha vinto il computer');
+}
 
 // FUNZIONI --->
 
 // GENERARE NUMERO RANDOM DA 1 A 5 
 function getRandomIntBetween(min, max) {
 
-    const n = Math.floor(Math.random() * (max - min + 1)) + min
-    console.log(n)
-    return n
+    const n = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    return n;
+}
+
+// STABILIRE PARI O DISPARI
+function isEven(num) {
+    if (num % 2 === 0) {
+        console.log('il numero è pari');
+        return true;
+    } else {
+        console.log('il numero è dispari');
+        return false;
+
+    }
 }
